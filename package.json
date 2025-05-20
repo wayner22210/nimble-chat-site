@@ -13,6 +13,7 @@
     "postcss": "^8.5.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "stripe": "^18.1.1",
     "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
