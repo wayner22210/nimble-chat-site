@@ -1,22 +1,63 @@
-export const siteContent = {
-  home: {
-    title: "Welcome to Nimble Chat",
-    tagline: "Your next-generation AI chat & booking assistant",
-    heroText:
-      "Nimble Chat helps appointment-driven businesses answer FAQs, book meetings, and manage customers — all automatically.",
-    features: [
-      { title: "Auto-Answer", desc: "Instant, on-brand responses to any PDF or FAQ." },
-      { title: "Book Appointments", desc: "Seamless calendar integration with Google & Outlook." },
-      { title: "Self-Serve Docs", desc: "Clients drag-and-drop files to update their KB in < 5 min." }
-    ]
-  },
-  about: {
-    heading: "About Nimble Chat",
-    story:
-      "Born out of the need for automated, intelligent customer interactions, Nimble Chat has evolved into a full-service AI assistant for SMBs.",
-  },
-  contact: {
-    heading: "Get in Touch",
-    intro: "Questions? Feedback? Drop us a line and we’ll get back within 24 hours.",
+  ,
+  pricing: {
+    tiers: [
+      {
+        name: "Starter",
+        price: "$49/month",
+        description: "Perfect for solo pros & local clinics",
+        features: [
+          "1 chat assistant",
+          "AI Q&A (RAG)",
+          "Single-domain widget",
+          "Appointment booking",
+          "100 convos/mo",
+          "Stripe integration",
+          "Admin dashboard",
+          "Basic branding",
+        ],
+        whyThisPrice:
+          "Affordable entry point that beats Intercom & Drift on features. Built for pros who want to automate intake.",
+      },
+      {
+        name: "Pro",
+        price: "$199/month",
+        description: "Ideal for SMBs & small teams",
+        features: [
+          "Everything in Starter",
+          "5,000 conversations/month",
+          "Live agent handoff",
+          "Video/audio escalation",
+          "Multilingual support",
+          "Advanced intake logic",
+          "White-label branding",
+          "Real-time analytics",
+        ],
+        whyThisPrice:
+          "Directly competes with Drift & Intercom but offers 5x AI power at a fraction of the price.",
+      },
+      {
+        name: "Enterprise",
+        price: "$499+/month",
+        description: "For franchises, agencies, and health orgs",
+        features: [
+          "Unlimited assistants/domains",
+          "Multi-tenant support",
+          "HIPAA compliance",
+          "API + SDK access",
+          "Custom AI tuning",
+          "Dedicated support",
+          "Persona control",
+        ],
+        whyThisPrice:
+          "Competes with Salesforce Einstein and Ada at scale — but more flexible and affordable.",
+      },
+    ],
+    addOns: [
+      { name: "Extra 1,000 convos", price: "$25" },
+      { name: "Branded mobile app", price: "$99/month" },
+      { name: "Custom AI tuning", price: "$500 one-time" },
+      { name: "White-label license", price: "$999 setup + $299/month" },
+    ],
+    strategicTake:
+      "Nimble Chat should launch mid-market and raise prices over time. Lead with power, not discounts.",
   }
-}
