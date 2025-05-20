@@ -2,7 +2,9 @@
 
 import { NextResponse } from "next/server"
 import Stripe from "stripe"
-})
+
+// ✅ Properly declare Stripe instance
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string)
 
 export async function POST(req: Request) {
   const { priceId } = await req.json()
@@ -19,6 +21,9 @@ export async function POST(req: Request) {
     return NextResponse.json({ url: session.url })
   } catch (error) {
     console.error("Stripe error:", error)
-    return NextResponse.json({ error: "Checkout session creation failed" }, { status: 500 })
+    return NextResponse.json(
+      { error: "Checkout session creation failed" },
+      { status: 500 }
+    )
   }
 }
