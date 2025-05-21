@@ -1,50 +1,58 @@
-// src/app/contact/page.tsx
-
-import { siteContent } from "@/content/siteContent"
-
 export default function ContactPage() {
-  const { heading, intro } = siteContent.contact
-
   return (
-    <div className="container mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold text-blue-600 text-center mb-4">{heading}</h1>
-      <p className="text-center text-gray-600 max-w-xl mx-auto mb-10">{intro}</p>
+    <div className="px-6 py-20 max-w-3xl mx-auto">
+      <h1 className="text-4xl md:text-5xl font-bold text-center mb-6">
+        Get in Touch
+      </h1>
+      <p className="text-center text-gray-600 mb-12">
+        Have questions? Need a custom solution? We’d love to hear from you.
+      </p>
 
-      <form className="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-md space-y-4 border border-gray-100">
+      <form className="space-y-6">
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Name</label>
+          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+            Full Name
+          </label>
           <input
+            id="name"
             type="text"
-            placeholder="Your full name"
-            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            placeholder="Your name"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Email</label>
+          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+            Email Address
+          </label>
           <input
+            id="email"
             type="email"
+            className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
             placeholder="you@example.com"
-            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
         </div>
 
         <div>
-          <label className="block text-sm font-semibold text-gray-700 mb-1">Message</label>
+          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+            Message
+          </label>
           <textarea
-            placeholder="How can we help you?"
+            id="message"
             rows={5}
-            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          ></textarea>
+            className="mt-1 block w-full px-4 py-2 border rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
+            placeholder="How can we help?"
+          />
         </div>
 
         <button
           type="submit"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow"
+          className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-full transition"
         >
           Send Message
         </button>
       </form>
     </div>
-  )
+  );
 }
+
