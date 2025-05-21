@@ -1,62 +1,71 @@
-// src/app/pricing/page.tsx
-"use client"
-
-import { siteContent } from "@/content/siteContent"
-
 export default function PricingPage() {
-  const { tiers, addOns, strategicTake } = siteContent.pricing
-
   return (
-    <div className="container mx-auto px-6 py-12">
-      <h1 className="text-4xl font-bold text-center text-blue-600 mb-4">Nimble Chat Pricing</h1>
-      <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-        Choose a plan that fits your business. Start simple, scale without limits.
+    <div className="px-6 py-20 max-w-6xl mx-auto text-center">
+      <h1 className="text-4xl md:text-5xl font-bold mb-6">
+        Simple, Transparent Pricing
+      </h1>
+      <p className="text-lg text-gray-600 mb-12">
+        Start for free — upgrade as you grow. No contracts. Cancel anytime.
       </p>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {tiers.map((tier) => (
-          <div
-            key={tier.name}
-            className="bg-white rounded-2xl shadow-md p-6 flex flex-col justify-between border border-gray-100"
+        {/* Starter Plan */}
+        <div className="border rounded-xl p-6 shadow hover:shadow-md transition">
+          <h2 className="text-2xl font-semibold mb-2">Starter</h2>
+          <p className="text-gray-600 mb-4">Perfect for solo creators & freelancers</p>
+          <div className="text-3xl font-bold mb-4">$49/mo</div>
+          <ul className="text-left text-sm text-gray-700 space-y-2 mb-6">
+            <li>✔️ 1 AI Chat Assistant</li>
+            <li>✔️ FAQ + Document Uploads</li>
+            <li>✔️ Booking & Form Integration</li>
+            <li>✔️ 100 Conversations / mo</li>
+          </ul>
+          <a
+            href="/signup"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition inline-block"
           >
-            <div>
-              <h2 className="text-2xl font-bold text-blue-600 mb-1">{tier.name}</h2>
-              <p className="text-gray-700 font-semibold mb-4">{tier.price}</p>
-              <p className="text-sm text-gray-500 mb-4">{tier.description}</p>
+            Get Started
+          </a>
+        </div>
 
-              <ul className="space-y-2 text-sm text-gray-700 mb-6">
-                {tier.features.map((feature, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span className="text-blue-500 mt-1">✔</span>
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <p className="text-xs text-gray-400 italic">{tier.whyThisPrice}</p>
-          </div>
-        ))}
-      </div>
+        {/* Growth Plan */}
+        <div className="border-2 border-blue-600 rounded-xl p-6 shadow-lg transform scale-105">
+          <h2 className="text-2xl font-semibold mb-2">Growth</h2>
+          <p className="text-gray-600 mb-4">Great for small teams & agencies</p>
+          <div className="text-3xl font-bold mb-4">$99/mo</div>
+          <ul className="text-left text-sm text-gray-700 space-y-2 mb-6">
+            <li>✔️ 3 AI Chat Assistants</li>
+            <li>✔️ Calendar & Payment Integration</li>
+            <li>✔️ 500 Conversations / mo</li>
+            <li>✔️ Multi-site Widget Support</li>
+          </ul>
+          <a
+            href="/signup"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-full transition inline-block"
+          >
+            Start Free Trial
+          </a>
+        </div>
 
-      <div className="mt-16">
-        <h3 className="text-2xl font-bold text-blue-600 mb-2 text-center">Optional Add-ons</h3>
-        <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-4 mt-4">
-          {addOns.map((addOn, i) => (
-            <div
-              key={i}
-              className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm w-full sm:w-[300px]"
-            >
-              <p className="font-semibold text-gray-800">{addOn.name}</p>
-              <p className="text-sm text-gray-500">{addOn.price}</p>
-            </div>
-          ))}
+        {/* Enterprise Plan */}
+        <div className="border rounded-xl p-6 shadow hover:shadow-md transition">
+          <h2 className="text-2xl font-semibold mb-2">Enterprise</h2>
+          <p className="text-gray-600 mb-4">Built for high-volume & custom needs</p>
+          <div className="text-3xl font-bold mb-4">Custom</div>
+          <ul className="text-left text-sm text-gray-700 space-y-2 mb-6">
+            <li>✔️ Unlimited Assistants*</li>
+            <li>✔️ API + Webhooks + Embeds</li>
+            <li>✔️ Onboarding Support</li>
+            <li>✔️ SLA & Compliance Options</li>
+          </ul>
+          <a
+            href="/contact"
+            className="bg-gray-800 hover:bg-black text-white py-2 px-4 rounded-full transition inline-block"
+          >
+            Contact Sales
+          </a>
         </div>
       </div>
-
-      <div className="mt-16 max-w-4xl mx-auto text-center">
-        <h4 className="text-xl font-bold text-blue-600 mb-2">Strategic Take</h4>
-        <p className="text-gray-600 text-sm">{strategicTake}</p>
-      </div>
     </div>
-  )
+  );
 }
