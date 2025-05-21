@@ -1,21 +1,24 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import './globals.css';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export const metadata = {
-  title: 'My Next.js Amplify Project',
-  description: 'A production-ready Next.js project for AWS Amplify',
-}
+  title: 'Nimble Chat Pro',
+  description: 'Your AI-Powered Assistant for Sales, Support, and Bookings',
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className="bg-white text-gray-900 font-sans">
+        <Navbar />
+        <main className="min-h-screen">{children}</main>
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
